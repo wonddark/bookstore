@@ -1,35 +1,51 @@
-import {useState} from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import BooksListing from "./features/books-listing";
+import { createBrowserRouter, Outlet, RouterProvider } from "react-router-dom";
+import { store } from "./app/store";
+import { Provider } from "react-redux";
+import BookDetails from "./features/book-details";
+import BookSearch from "./features/book-search";
+import Layout from "@/components/layout.tsx";
+import ListsListing from "@/features/list-listing/lists-listing.tsx";
+import ListDetails from "@/features/list-details/list-details.tsx";
 
 function App() {
-  const [count, setCount] = useState(0)
-
-  return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+  return <RouterProvider router={router} />;
 }
 
-export default App
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: (
+      <Provider store={store}>
+        <Layout />
+      </Provider>
+    ),
+    children: [
+      {
+        index: true,
+        element: <BooksListing />,
+      },
+      {
+        path: "book/:isbn13",
+        element: <BookDetails />,
+      },
+      {
+        path: "search",
+        element: <BookSearch />,
+      },
+      {
+        path: "lists",
+        element: <Outlet />,
+        children: [
+          { index: true, element: <ListsListing /> },
+          {
+            path: ":listId",
+            element: <ListDetails />,
+          },
+        ],
+      },
+    ],
+  },
+]);
+
+export default App;
