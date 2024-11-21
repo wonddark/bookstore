@@ -54,6 +54,7 @@ export default function BookDetails() {
               <strong>{data?.publisher}</strong>
               <p>{data?.year}</p>
               <p>{data?.pages} pages</p>
+              {/* @ts-expect-error Types */}
               <Rating
                 placeholderRating={Number(data?.rating ?? 0)}
                 emptySymbol={<i className="fa-regular fa-star" />}
