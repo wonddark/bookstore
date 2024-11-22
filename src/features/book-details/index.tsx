@@ -11,6 +11,7 @@ import {
 } from "@/components/ui/breadcrumb";
 import { Skeleton } from "@/components/ui/skeleton.tsx";
 import AddRemoveBookmark from "@/components/add-remove-bookmark.tsx";
+import RelatedBooks from "@/components/related-books.tsx";
 
 export default function BookDetails() {
   const { isbn13 } = useParams();
@@ -89,6 +90,12 @@ export default function BookDetails() {
           )}
         </div>
       </div>
+      {data && (
+        <div className="my-4 pt-4 px-2 space-y-3 border-t border-slate-400">
+          <h5 className="text-base lg:text-lg font-semibold">Related</h5>
+          <RelatedBooks bookTitle={data.title} />
+        </div>
+      )}
     </>
   );
 }
