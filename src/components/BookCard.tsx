@@ -19,7 +19,11 @@ export default function BookCard(props: Readonly<Props>) {
   return (
     <Card className="flex flex-col w-full max-w-[300px]">
       <Link to={`/book/${isbn13}`}>
-        <img src={image} alt={title} className="hover:scale-110" />
+        <img
+          src={image}
+          alt={title}
+          className="hover:scale-110 transition-transform duration-700 ease-in-out"
+        />
       </Link>
       <CardHeader className="flex-1">
         <CardTitle>
