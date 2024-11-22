@@ -13,7 +13,7 @@ export default function SearchForm() {
         type="search"
         placeholder="Search"
         name="q"
-        className="w-full rounded-r-none"
+        className="rounded-r-none"
       />
       <Button className="rounded-l-none">
         <i className="fa-solid fa-search"></i>
