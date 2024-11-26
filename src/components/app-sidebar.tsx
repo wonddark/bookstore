@@ -17,12 +17,21 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu.tsx";
 import { Link } from "react-router-dom";
+import { LibraryBig } from "lucide-react";
 
 export default function AppSidebar() {
   return (
     <Sidebar>
       <SidebarHeader>
-        <Link to="/">BookStore</Link>
+        <Link to="/" className="inline-flex gap-2 items-center">
+          <LibraryBig />
+          <div className="flex flex-col">
+            <span className="font-semibold">TeachRead</span>
+            <span className="text-sm font-light">
+              Best books for tech reading
+            </span>
+          </div>
+        </Link>
       </SidebarHeader>
       <SidebarContent>
         <SidebarGroup>
