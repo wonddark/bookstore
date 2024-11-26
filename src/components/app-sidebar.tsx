@@ -26,7 +26,7 @@ export default function AppSidebar() {
         <Link to="/" className="inline-flex gap-2 items-center">
           <LibraryBig />
           <div className="flex flex-col">
-            <span className="font-semibold">TeachRead</span>
+            <span className="font-semibold">TechRead</span>
             <span className="text-sm font-light">
               Best books for tech reading
             </span>
