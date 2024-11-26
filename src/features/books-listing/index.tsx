@@ -1,5 +1,5 @@
 import { useRecentBooksQuery } from "@/app/books.api.ts";
-import BookCard from "../../components/BookCard.tsx";
+import BookCard from "../../components/book-card.tsx";
 import SkeletonBookCard from "@/components/skeletons/skeleton-book-card.tsx";
 
 export default function BooksListing() {

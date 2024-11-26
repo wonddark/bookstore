@@ -1,6 +1,6 @@
 import { useSearchBooksQuery } from "@/app/books.api.ts";
 import SkeletonBookCard from "@/components/skeletons/skeleton-book-card.tsx";
-import BookCard from "@/components/BookCard.tsx";
+import BookCard from "@/components/book-card.tsx";
 
 type Props = {
   bookTitle: string;

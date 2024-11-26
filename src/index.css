@@ -4,28 +4,6 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-    --step--2: clamp(0.6076rem, 0.5632rem + 0.1894vw, 0.8rem);
-    --step--1: clamp(0.7292rem, 0.6667rem + 0.2667vw, 1rem);
-    --step-0: clamp(0.875rem, 0.7885rem + 0.3692vw, 1.25rem);
-    --step-1: clamp(1.05rem, 0.9317rem + 0.5046vw, 1.5625rem);
-    --step-2: clamp(1.26rem, 1.1rem + 0.6825vw, 1.9531rem);
-    --step-3: clamp(1.512rem, 1.2975rem + 0.9151vw, 2.4414rem);
-    --step-4: clamp(1.8144rem, 1.5289rem + 1.2183vw, 3.0518rem);
-    --step-5: clamp(2.1773rem, 1.7994rem + 1.6122vw, 3.8147rem);
-}
-
-body {
-    font-family: Manrope, system-ui, Avenir, Helvetica, Arial, sans-serif;
-    font-size: var(--step-0);
-    line-height: 1.5;
-    font-weight: 500;
-    font-synthesis: none;
-    text-rendering: optimizelegibility;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-}
-
 @layer base {
     :root {
         --background: 0 0% 100%;
