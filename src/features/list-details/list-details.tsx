@@ -10,11 +10,11 @@ export default function ListDetails() {
     document.title = `Default | Lists | BookStore`;
   }
   return (
-    <div className="py-3 lg:py-4">
+    <div className="py-3 lg:py-4 px-3 lg:px-5">
       {listId === "0" && (
         <div>
-          <h3 className="text-xl lg:text-2xl font-semibold">Default</h3>
-          <p className="text-lg lg:text-xl text-muted-foreground">
+          <h3 className="text-lg lg:text-xl font-semibold">Default</h3>
+          <p className="lg:text-lg text-muted-foreground">
             This is the default list for anonymous users. It will be emptied
             after you leave the site.
           </p>
