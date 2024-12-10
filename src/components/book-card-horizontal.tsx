@@ -1,10 +1,4 @@
-import {
-  Card,
-  CardDescription,
-  CardFooter,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card.tsx";
+import { Card } from "@/components/ui/card.tsx";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button.tsx";
 import { BookSummary } from "@/types/book.ts";
@@ -19,23 +13,27 @@ export default function BookCardHorizontal(props: Readonly<Props>) {
     book: { image, isbn13, title, subtitle },
   } = props;
   return (
-    <Card className="w-full flex gap-2.5">
-      <Link to="/">
+    <Card className="w-full flex gap-2.5 p-3 lg:p-5">
+      <Link to="/" viewTransition>
         <img src={image} alt={title} className="max-w-20" />
       </Link>
       <div className="flex flex-col">
-        <CardHeader>
-          <CardTitle>
-            <Link to={`/book/${isbn13}`}>{title}</Link>
-          </CardTitle>
-          <CardDescription>{subtitle}</CardDescription>
-        </CardHeader>
-        <CardFooter className="space-x-2.5">
-          <Button asChild>
-            <Link to={`/book/${isbn13}`}>More details</Link>
-          </Button>
+        <Link
+          to={`/book/${isbn13}`}
+          viewTransition
+          className="font-medium leading-tight"
+        >
+          {title}
+        </Link>
+        <p className="text-muted-foreground mb-4 text-xs">{subtitle}</p>
+        <div className="space-x-2.5">
           <AddRemoveBookmark book={props.book} />
-        </CardFooter>
+          <Button asChild variant="secondary">
+            <Link to={`/book/${isbn13}`} viewTransition>
+              More details
+            </Link>
+          </Button>
+        </div>
       </div>
     </Card>
   );
