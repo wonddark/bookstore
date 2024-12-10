@@ -29,7 +29,9 @@ export default function RemoveFromList({ book, hideLabel }: Readonly<Props>) {
       <DialogTrigger asChild>
         <Button variant={hideLabel ? "outline" : "default"}>
           <i className="fa-solid fa-bookmark"></i>
-          {!hideLabel && <span>Remove from playlist</span>}
+          {!hideLabel && (
+            <span className="hidden md:inline">Remove from playlist</span>
+          )}
         </Button>
       </DialogTrigger>
       <DialogClose hidden ref={closeRef} />
