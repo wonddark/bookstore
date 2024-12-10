@@ -14,9 +14,9 @@ export default function BookCard(props: Readonly<Props>) {
   const { image, title, subtitle, isbn13 } = book;
   const [imgReady, setImgReady] = useState<boolean>(false);
   return (
-    <Card className="flex flex-col w-full max-w-[300px]">
+    <Card className="flex flex-col w-full md:max-w-[300px]">
       <CardContent className="flex-1">
-        <Link to={`/book/${isbn13}`}>
+        <Link to={`/book/${isbn13}`} viewTransition>
           <Skeleton
             className={`w-full aspect-square ${imgReady ? "hidden" : "block"}`}
           />
@@ -27,14 +27,16 @@ export default function BookCard(props: Readonly<Props>) {
             onLoad={() => setImgReady(true)}
           />
         </Link>
-        <Link to={`/book/${isbn13}`} className="font-medium">
+        <Link to={`/book/${isbn13}`} viewTransition className="font-medium">
           {title}
         </Link>
         <p className="text-sm font-light">{subtitle}</p>
       </CardContent>
       <CardFooter className="gap-2.5">
         <Button asChild className="flex-1">
-          <Link to={`/book/${isbn13}`}>More details</Link>
+          <Link to={`/book/${isbn13}`} viewTransition>
+            More details
+          </Link>
         </Button>
         <AddRemoveBookmark book={book} hideLabel />
       </CardFooter>
