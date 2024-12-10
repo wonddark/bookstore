@@ -32,12 +32,14 @@ export default function BookDetails() {
           </BreadcrumbList>
         </Breadcrumb>
       </div>
-      <div className="space-y-1 py-2.5 lg:py-4 px-4 lg:px-6">
+      <div className="py-2.5 lg:py-4 px-4 lg:px-6">
         {!isLoading ? (
           <>
-            <h3 className="text-xl lg:text-2xl font-bold">{data?.title}</h3>
-            <h5 className="text-lg lg:text-xl font-medium">{data?.subtitle}</h5>
-            <p className="font-semibold">{data?.authors}</p>
+            <h3 className="text-xl lg:text-2xl font-bold leading-tight">
+              {data?.title}
+            </h3>
+            <h5 className="font-light">{data?.subtitle}</h5>
+            <p className="font-medium mt-2">{data?.authors}</p>
           </>
         ) : (
           <>
@@ -48,11 +50,11 @@ export default function BookDetails() {
         )}
       </div>
       <div className="flex flex-col lg:flex-row px-4 lg:px-6 mt-2 lg:mt-4">
-        <div className="space-y-2 w-full max-w-[300px]">
+        <div className="space-y-2 w-full lg:max-w-[300px] mb-4 md:mb-0">
           {!isLoading ? (
             <>
               <img src={data?.image} alt={data?.title} />
-              <strong>{data?.publisher}</strong>
+              <strong className="font-medium">{data?.publisher}</strong>
               <p>{data?.year}</p>
               <p>{data?.pages} pages</p>
               {/* @ts-expect-error Types */}
@@ -91,8 +93,8 @@ export default function BookDetails() {
         </div>
       </div>
       {data && (
-        <div className="my-4 pt-4 px-2 space-y-3 border-t border-slate-400">
-          <h5 className="text-base lg:text-lg font-semibold">Related</h5>
+        <div className="my-4 pt-4 px-4 lg:px-6 space-y-3 border-t border-slate-300">
+          <h5 className="font-medium">Related books</h5>
           <RelatedBooks bookTitle={data.title} />
         </div>
       )}
