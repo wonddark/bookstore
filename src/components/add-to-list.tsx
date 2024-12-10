@@ -47,7 +47,7 @@ export default function AddToList({ book, hideLabel }: Readonly<Props>) {
           </ScrollArea>
           <DialogDescription>Login to create new book list.</DialogDescription>
         </div>
-        <DialogFooter>
+        <DialogFooter className="gap-3 lg:gap-5">
           <Button
             variant="secondary"
             onClick={() => {
