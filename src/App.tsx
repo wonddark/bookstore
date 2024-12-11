@@ -7,6 +7,7 @@ import BookSearch from "./features/book-search";
 import Layout from "@/components/layout.tsx";
 import ListsListing from "@/features/list-listing/lists-listing.tsx";
 import ListDetails from "@/features/list-details/list-details.tsx";
+import NotFound from "@/components/not-found.tsx";
 
 function App() {
   return <RouterProvider router={router} />;
@@ -44,6 +45,7 @@ const router = createBrowserRouter([
           },
         ],
       },
+      { path: "/*", element: <NotFound /> },
     ],
   },
 ]);
