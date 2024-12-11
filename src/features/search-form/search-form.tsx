@@ -1,9 +1,11 @@
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input.tsx";
-import { useQueryState } from "nuqs";
+import { useSearchParams } from "react-router-dom";
 
 export default function SearchForm() {
-  const [query] = useQueryState("q", { defaultValue: "" });
+  // const [query] = useQueryState("q", { defaultValue: "" });
+  const [params] = useSearchParams();
+  const query = params.get("q") ?? "";
 
   return (
     <form
