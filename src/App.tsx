@@ -7,14 +7,9 @@ import BookSearch from "./features/book-search";
 import Layout from "@/components/layout.tsx";
 import ListsListing from "@/features/list-listing/lists-listing.tsx";
 import ListDetails from "@/features/list-details/list-details.tsx";
-import { NuqsAdapter } from "nuqs/adapters/react-router";
 
 function App() {
-  return (
-    <NuqsAdapter>
-      <RouterProvider router={router} />
-    </NuqsAdapter>
-  );
+  return <RouterProvider router={router} />;
 }
 
 const router = createBrowserRouter([
