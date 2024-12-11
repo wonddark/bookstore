@@ -3,7 +3,6 @@ import { Input } from "@/components/ui/input.tsx";
 import { useSearchParams } from "react-router-dom";
 
 export default function SearchForm() {
-  // const [query] = useQueryState("q", { defaultValue: "" });
   const [params] = useSearchParams();
   const query = params.get("q") ?? "";
 
