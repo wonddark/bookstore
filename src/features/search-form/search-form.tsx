@@ -4,11 +4,12 @@ import { useQueryState } from "nuqs";
 
 export default function SearchForm() {
   const [query] = useQueryState("q", { defaultValue: "" });
+
   return (
     <form
       method="GET"
       action="/search"
-      className="flex items-center w-full max-w-3xl mx-auto"
+      className="flex items-center w-full max-w-screen-xl mx-auto"
     >
       <input type="text" readOnly hidden name="p" value="1" />
       <Input
